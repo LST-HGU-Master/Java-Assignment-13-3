@@ -1,18 +1,3 @@
-# 課題 13-3: ハッシュマップ
-
-### 課題の説明
-次のRailwayLineクラスは、各駅名をキーとし、その駅の1日あたりの利用者数を値にしたHashMapを山手線のデータで
-初期化した変数stationsをもつ。
-RailwayLineクラスに1日あたりの利用者数の合計と平均を求めるメソッドgetSum()とgetMean()を追加しなさい。
-
-
-| メソッド名   | 引数のリスト | 戻り値の型  | 
-|---------|--------|--------|
-| getSum  | なし     | int    | 
-| getMean | なし     | double | 
-
-### RailwayLine.java
-```java
 import java.util.HashMap;
 import java.util.Map;
 
@@ -51,25 +36,5 @@ public class RailwayLine {
             put("有楽町", 346006);
         }
     };
-}
-```
-
-
-### ProgD3.java (提出不要)
-```java
-public class ProgD3 {
-
-	public static void main(String[] args) {
-		RailwayLine yamanote = new RailwayLine();
-		
-		System.out.println(yamanote.getSum());
-		System.out.println(yamanote.getMean());
-	}
 
 }
-```
-### 実行結果
-```
-10937072
-377140.0
-```
