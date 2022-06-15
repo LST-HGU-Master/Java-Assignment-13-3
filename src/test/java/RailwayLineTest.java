@@ -6,7 +6,10 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.HashMap;
 import java.util.Map;
-
+/**
+ * @version (20220615)
+ *  注意）このテストコードは RailwayLineクラスに２つのメソッドが定義されるまでエラーとなる
+ */
 public class RailwayLineTest {
 
     Map<String, Integer> stations = new HashMap<String, Integer>() {
@@ -51,7 +54,7 @@ public class RailwayLineTest {
         RailwayLine y = new RailwayLine();
 
         // assertion
-        assertEquals(10937072, y.getSum());
+        assertEquals(10937072, y.getSum(),"利用者の合計値が不正です!");
     }
 
     @Test
@@ -61,6 +64,6 @@ public class RailwayLineTest {
         RailwayLine y = new RailwayLine();
 
         // assertion
-        assertEquals(377140.0, y.getMean());
+        assertEquals(377140.0, y.getMean(),"利用者の平均値が不正です!");
     }
 }
