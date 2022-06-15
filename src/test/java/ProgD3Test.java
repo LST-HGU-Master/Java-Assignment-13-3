@@ -5,7 +5,7 @@ import java.io.*;
 public class ProgD3Test {
 
     @Test
-    public void testHelloWorld()
+    public void testMain()
     {
         PrintStream originalOut = System.out;
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
@@ -15,14 +15,13 @@ public class ProgD3Test {
         System.setIn(in);
 
         // action
-        // in.inputln("2"); // 標準入力をテストする場合
-        // Hello.main(new String[]{"1", "2", "3"}); // 実行時引数をテストする場合
         ProgD3.main(null);
-
-        // assertion
-        assertEquals("Hello world!\n", bos.toString());
-
         // undo the binding in System
         System.setOut(originalOut);
+        
+        String prints[] = bos.toString().split("\r\n|\n", -1);
+        // assertion
+        assertEquals("10937072", prints[0],"利用者の合計値が不正です!");
+        assertEquals("377140.0", prints[1],"利用者の平均値が不正です!");
     }
 }
