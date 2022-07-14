@@ -7,7 +7,7 @@ import java.lang.reflect.Modifier;
 import java.util.HashMap;
 import java.util.Map;
 /**
- * @version (20220615)
+ * @version (20220714)
  *  注意）このテストコードは RailwayLineクラスに２つのメソッドが定義されるまでエラーとなる
  */
 public class RailwayLineTest {
@@ -52,9 +52,13 @@ public class RailwayLineTest {
     {
         // action
         RailwayLine y = new RailwayLine();
-
         // assertion
         assertEquals(10937072, y.getSum(),"利用者の合計値が不正です!");
+
+        // action
+        y.stations.put("高輪ゲートウェイ", 30);
+        // assertion 2
+        assertEquals(10937102, y.getSum(),"利用者の合計値計算が正しく行われていません!");
     }
 
     @Test
@@ -62,8 +66,12 @@ public class RailwayLineTest {
     {
         // action
         RailwayLine y = new RailwayLine();
-
         // assertion
-        assertEquals(377140.0, y.getMean(),"利用者の平均値が不正です!");
+        assertEquals(377140, y.getMean(),"利用者の平均値が不正です!");
+        
+        // action
+        y.stations.put("高輪ゲートウェイ", 30);
+        // assertion 2
+        assertEquals(364570, y.getMean(),"利用者の平均値計算が正しく行われていません!");
     }
 }
