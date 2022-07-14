@@ -22,6 +22,6 @@ public class ProgD3Test {
         String prints[] = bos.toString().split("\r\n|\n", -1);
         // assertion
         assertEquals("10937072", prints[0],"利用者の合計値が不正です!");
-        assertEquals("377140.0", prints[1],"利用者の平均値が不正です!");
+        assertEquals("377140", prints[1],"利用者の平均値が不正です!");
     }
 }
